@@ -11,14 +11,6 @@ define('SITE_TITLE', 'mediplus');
 $url = @explode('/', trim(parse_url($_SERVER['REQUEST_URI'])['path'], '/'))[1];
 $url = empty($url) ? '/' : $url;
 
-
-// require APP_ROOT. DS . 'core' . DS . 'function.php';
-// require APP_ROOT. DS . 'model' . DS . 'Db.php';
-
-// require_once 'core'. DS. 'function.php';
-// require_once 'core'. DS. 'model' .DS. 'DB.php';
-// require_once 'core'. DS.  'Session.php';
-
 $routes = [
     // 
     '/'=>'home.php',
@@ -38,4 +30,5 @@ if (@in_array($routes[$url], $routes)) {
     require $routes['404'];
     die;
 }
+
 
